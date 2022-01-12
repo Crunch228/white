@@ -167,10 +167,10 @@
 			compiled_list[human_to_check.real_name] = human_to_check
 
 	if(compiled_list.len == 0)
-		to_chat(user, span_warning("These items don't possess the required fingerprints or DNA."))
+		to_chat(user, span_warning("На этих предметах нет необходимых отпечатков пальцев или ДНК."))
 		return FALSE
 
-	var/chosen_mob = input("Select the person you wish to curse","Your target") as null|anything in sortList(compiled_list, /proc/cmp_mob_realname_dsc)
+	var/chosen_mob = input("Выберите человека, которого вы хотите проклясть","Ваша цель") as null|anything in sortList(compiled_list, /proc/cmp_mob_realname_dsc)
 	if(!chosen_mob)
 		return FALSE
 	curse(compiled_list[chosen_mob])
@@ -241,9 +241,9 @@
 ///////////////
 
 /datum/eldritch_knowledge/spell/basic
-	name = "Break of Dawn"
-	desc = "Starts your journey in the Mansus. Allows you to select a target using a living heart on a transmutation rune."
-	gain_text = "Another day at a meaningless job. You feel a shimmer around you, as a realization of something strange in your backpack unfolds. You look at it, unknowingly opening a new chapter in your life."
+	name = "Рассвет Оккультизма"
+	desc = "Начните свое путешествие в мир Древних и Забытых. Позволяет выбрать цель, используя живое сердце на руне трансмутации."
+	gain_text = "Еще один день на бессмысленной работе. Вы чувствуете мерцание вокруг себя, когда осознаете, что в вашем рюкзаке происходит что-то странное. Вы смотрите на это, неосознанно открывая новую главу в своей жизни."
 	next_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/base_void)
 	cost = 0
 	spell_to_add = /obj/effect/proc_holder/spell/targeted/touch/mansus_grasp
@@ -265,7 +265,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,span_danger("Your patrons accepts your offer.."))
+			to_chat(carbon_user,span_danger("Ваши покровители принимают ваше подношение"))
 			var/mob/living/carbon/human/H = LH.target
 			H.gib()
 			LH.target = null
@@ -288,19 +288,19 @@
 				if(!targeted)
 					break
 				targets[targeted.current.real_name] = targeted.current
-			LH.target = targets[input(user,"Choose your next target","Target") in targets]
+			LH.target = targets[input(user,"Выберите свою следующую цель","Цель") in targets]
 			qdel(A)
 			if(LH.target)
-				to_chat(user,span_warning("Your new target has been selected, go and sacrifice [LH.target.real_name]!"))
+				to_chat(user,span_warning("Ваша новая цель выбрана, принеси её нам в жертву [LH.target.real_name]!"))
 			else
-				to_chat(user,span_warning("target could not be found for living heart."))
+				to_chat(user,span_warning("цель не могла быть найдена для живого сердца."))
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return
 
 /datum/eldritch_knowledge/living_heart
-	name = "Living Heart"
-	desc = "Allows you to create additional living hearts, using a heart, a pool of blood and a poppy. Living hearts when used on a transmutation rune will grant you a person to hunt and sacrifice on the rune. Every sacrifice gives you an additional charge in the book."
+	name = "Живое Сердце"
+	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации дадут вам человека для охоты и жертвоприношения на руне. Каждая жертва дает вам дополнительный заряд в книге."
 	gain_text = "The Gates of Mansus open up to your mind."
 	cost = 0
 	required_atoms = list(/obj/item/organ/heart,/obj/effect/decal/cleanable/blood,/obj/item/food/grown/poppy)
@@ -308,9 +308,9 @@
 	route = "Start"
 
 /datum/eldritch_knowledge/codex_cicatrix
-	name = "Codex Cicatrix"
-	desc = "Allows you to create a spare Codex Cicatrix if you have lost one, using a bible, human skin, a pen and a pair of eyes."
-	gain_text = "Their hand is at your throat, yet you see Them not."
+	name = "Кодекс Шрама"
+	desc = "Позволяет вам создать запасной рубец Кодекса, если вы его потеряли, используя Библию, человеческую кожу, ручку и пару глаз."
+	gain_text = "Их рука у твоего горла, но ты Их не видишь."
 	cost = 0
 	required_atoms = list(/obj/item/organ/eyes,/obj/item/stack/sheet/animalhide/human,/obj/item/storage/book/bible,/obj/item/pen)
 	result_atoms = list(/obj/item/forbidden_book)
