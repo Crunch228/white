@@ -216,7 +216,7 @@
 	. = ..()
 	if(!IS_HERETIC(user) && ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		to_chat(human_user,span_warning("Твой разум горит, когда ты смотришь на слезу!"))
+		to_chat(human_user,span_warning("Твой разум горит, когда ты смотришь на разлом!"))
 		human_user.adjustOrganLoss(ORGAN_SLOT_BRAIN,10,190)
 		SEND_SIGNAL(human_user, COMSIG_ADD_MOOD_EVENT, "gates_of_mansus", /datum/mood_event/gates_of_mansus)
 
