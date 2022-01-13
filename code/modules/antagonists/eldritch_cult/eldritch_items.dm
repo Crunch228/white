@@ -57,7 +57,7 @@
 /datum/action/innate/heretic_shatter/Activate()
 	var/turf/safe_turf = find_safe_turf(zlevels = sword.z, extended_safety_checks = TRUE)
 	do_teleport(holder,safe_turf,forceMove = TRUE)
-	to_chat(holder,span_warning("Вы чувствуете порыв энергии, проходящий через ваше тело... Горы Ржавчины услышали твой зов..."))
+	to_chat(holder,span_warning("Я чувствую порыв энергии, проходящий через моё тело... Горы Ржавчины услышали мой зов..."))
 	qdel(sword)
 
 
@@ -407,7 +407,7 @@
 
 /obj/item/eldritch_potion/attack_self(mob/user)
 	. = ..()
-	to_chat(user,span_notice("Вы пьете зелье, и вместе с вязкой жидкостью стакан дематериализуется."))
+	to_chat(user,span_notice("Я пью зелье, и вместе с вязкой жидкостью стакан дематериализуется."))
 	effect(user)
 	qdel(src)
 

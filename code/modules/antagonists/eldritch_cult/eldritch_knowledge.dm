@@ -265,7 +265,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,span_danger("Ваши покровители принимают ваше подношение"))
+			to_chat(carbon_user,span_danger("Ваши покровители принимают моё подношение"))
 			var/mob/living/carbon/human/H = LH.target
 			H.gib()
 			LH.target = null
@@ -293,7 +293,7 @@
 			if(LH.target)
 				to_chat(user,span_warning("Ваша новая цель выбрана, принеси её нам в жертву [LH.target.real_name]!"))
 			else
-				to_chat(user,span_warning("цель не могла быть найдена для живого сердца."))
+				to_chat(user,span_warning("цель не может быть найдена для живого сердца."))
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return
