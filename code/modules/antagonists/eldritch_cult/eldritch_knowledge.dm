@@ -300,16 +300,16 @@
 
 /datum/eldritch_knowledge/living_heart
 	name = "Живое Сердце"
-	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации помечают человека для охоты и жертвоприношения на руне. Каждая жертва дает вам дополнительный заряд в книге."
+	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации помечают человека для охоты и жертвоприношения на руне. Каждая жертва дает вам два дополнительных заряда в книгу."
 	gain_text = "Забытые открываются моему разуму"
 	required_atoms = list(/obj/item/organ/heart,/obj/effect/decal/cleanable/blood,/obj/item/food/grown/poppy)
 	result_atoms = list(/obj/item/living_heart)
 	route = "Start"
 
 /datum/eldritch_knowledge/codex_cicatrix
-	name = "Кодекс Цикатрикса"
+	name = "Кодекс Цикатрикс"
 	desc = "Позволяет вам создать ещё одну книгу, если вы ёё потеряли, используя Библию, человеческую кожу, ручку и пару глаз."
-	gain_text = "Их рука у твоего горла, но ты их не видишь."
+	gain_text = "Их руки у твоего горла, но ты их не видишь."
 	cost = 0
 	required_atoms = list(/obj/item/organ/eyes,/obj/item/stack/sheet/animalhide/human,/obj/item/storage/book/bible,/obj/item/pen)
 	result_atoms = list(/obj/item/forbidden_book)
