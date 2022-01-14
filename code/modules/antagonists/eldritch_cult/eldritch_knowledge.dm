@@ -265,7 +265,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,span_danger("Мои покровители принимают моё подношение"))
+			to_chat(carbon_user,span_danger("Мои покровители принимают подношение"))
 			var/mob/living/carbon/human/H = LH.target
 			H.gib()
 			LH.target = null
@@ -291,7 +291,7 @@
 			LH.target = targets[input(user,"Выберите свою следующую цель","Цель") in targets]
 			qdel(A)
 			if(LH.target)
-				to_chat(user,span_warning("Моя новая цель выбрана, принеси её нам в жертву [LH.target.real_name]!"))
+				to_chat(user,span_warning("Моя новая цель выбрана. Нужно принести в жертву [LH.target.real_name]!"))
 			else
 				to_chat(user,span_warning("Цель не может быть найдена для живого сердца."))
 
@@ -301,14 +301,13 @@
 /datum/eldritch_knowledge/living_heart
 	name = "Живое Сердце"
 	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации дадут вам человека для охоты и жертвоприношения на руне. Каждая жертва дает вам дополнительный заряд в книге."
-	gain_text = "The Gates of Mansus open up to your mind."
-	cost = 0
+	gain_text = "Забытые открываются моему разуму"
 	required_atoms = list(/obj/item/organ/heart,/obj/effect/decal/cleanable/blood,/obj/item/food/grown/poppy)
 	result_atoms = list(/obj/item/living_heart)
 	route = "Start"
 
 /datum/eldritch_knowledge/codex_cicatrix
-	name = "Кодекс Шрама"
+	name = "Кодекс Цикатрикса"
 	desc = "Позволяет вам создать запасной рубец Кодекса, если вы его потеряли, используя Библию, человеческую кожу, ручку и пару глаз."
 	gain_text = "Их рука у твоего горла, но ты Их не видишь."
 	cost = 0
