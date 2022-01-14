@@ -293,14 +293,14 @@
 			if(LH.target)
 				to_chat(user,span_warning("Моя новая цель выбрана. Нужно принести в жертву [LH.target.real_name]!"))
 			else
-				to_chat(user,span_warning("Цель не может быть найдена для живого сердца."))
+				to_chat(user,span_warning("Цель не может быть найдена."))
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return
 
 /datum/eldritch_knowledge/living_heart
 	name = "Живое Сердце"
-	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации дадут вам человека для охоты и жертвоприношения на руне. Каждая жертва дает вам дополнительный заряд в книге."
+	desc = "Позволяет создавать дополнительные живые сердца, используя сердце, лужу крови и мак. Живые сердца при использовании на руне трансмутации помечают человека для охоты и жертвоприношения на руне. Каждая жертва дает вам дополнительный заряд в книге."
 	gain_text = "Забытые открываются моему разуму"
 	required_atoms = list(/obj/item/organ/heart,/obj/effect/decal/cleanable/blood,/obj/item/food/grown/poppy)
 	result_atoms = list(/obj/item/living_heart)
@@ -308,8 +308,8 @@
 
 /datum/eldritch_knowledge/codex_cicatrix
 	name = "Кодекс Цикатрикса"
-	desc = "Позволяет вам создать запасной рубец Кодекса, если вы его потеряли, используя Библию, человеческую кожу, ручку и пару глаз."
-	gain_text = "Их рука у твоего горла, но ты Их не видишь."
+	desc = "Позволяет вам создать ещё одну книгу, если вы ёё потеряли, используя Библию, человеческую кожу, ручку и пару глаз."
+	gain_text = "Их рука у твоего горла, но ты их не видишь."
 	cost = 0
 	required_atoms = list(/obj/item/organ/eyes,/obj/item/stack/sheet/animalhide/human,/obj/item/storage/book/bible,/obj/item/pen)
 	result_atoms = list(/obj/item/forbidden_book)
