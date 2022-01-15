@@ -129,7 +129,7 @@
 	chosen_mob.remove_status_effect(/datum/status_effect/corrosion_curse)
 
 /datum/eldritch_knowledge/curse/paralysis
-	name = "Проклятие паралича"
+	name = "Проклятие Паралича"
 	gain_text = "Зарази их плоть, заставь истекать кровью."
 	desc = "Проклинает вашу жертву на 5 минут неспособности ходить. Используйте на руне трансмутации нож, лужу крови, пару ног, топорик и предмет, к которому жертва прикасалась голыми руками. "
 	cost = 1
